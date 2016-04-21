@@ -1,0 +1,23 @@
+{
+  "name": "pbcopy-for-the-masses",
+  "version": "0.0.1",
+  "description": "Tiny package to ease copying from file to clipboard",
+  "main": "copy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShivanKaul/pbcopy-for-the-masses.git"
+  },
+  "bin": {
+    "copy": "copy"
+  },
+  "keywords": [
+    "copy",
+    "bash"
+  ],
+  "author": "Shivan Kaul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShivanKaul/pbcopy-for-the-masses/issues"
+  },
+  "homepage": "https://github.com/ShivanKaul/pbcopy-for-the-masses#readme"
+}

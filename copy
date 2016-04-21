@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Ease copying from file to clipboard
+
+# Usage:
+#     copy #lines <filename>
+
+# Check if 2 arguments &&
+# Check if second argument is number
+re='^[0-9]+$'
+if [[ $# -ne 2  ]] || [[ ! $1 =~ $re ]]; then
+    echo "Usage: \`copy <number-lines-to-copy> <filename>\`."
+    exit 1
+fi
+# Check if file in $2 exists
+if [ ! -e $2 ]; then
+    echo "File \`$2\` does not exist in this directory!"
+    exit 1
+fi
+
+if [ "$(uname)" == "Darwin" ]; then
+    head -n $1 $2 | pbcopy
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    # NOTE: Need to have X installed
+    head -n $1 $2 | xclip -i -sel c -f | xclip -i -sel p
+else
+    echo "Your OS is not supported :(. Only Linux and Mac are supported."
+fi
